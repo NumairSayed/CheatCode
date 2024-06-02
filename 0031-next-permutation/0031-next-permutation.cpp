@@ -34,7 +34,16 @@ public:
         }
         int nearestSmallest = 0;
         
-        // Ideally You should be calling a function that would find the smallest element greater than that on targetIndex and return the index on ehich that element resides to further swap it, but it teurns out, in this problem, if you look for element greater than that on target index, from the right end, the first element that you find, turns out to be the one. Since array is decreasing order sorted if you disregrad the (to be swapped element) //
+        /* Ideally You should be calling a function 
+           that would find the smallest element greater 
+           than that on targetIndex and return the index 
+           on which that element resides to further swap it, 
+           but it teurns out, in this problem, 
+           if you look for element greater than that 
+           on target index, from the right end, 
+           the first element that you find, turns out to be the one. 
+           Since array is decreasing order sorted if you disregrad 
+           the (to be swapped element) */
         
         for(int i=len-1;i>targetIndex;i--)
         {
@@ -51,6 +60,12 @@ public:
 // 7 3 6 5 4 2 1
 // 7 3 6 5 4 '2 1' // is 12>21 ? No
 // 7 3 6 5 '4 2 1' // is there a perm of 421 > 421? No 
+// 7 3 6 '5 4 2 1' // is there a perm of 5421 > 5421? No
+// 7 3 '6 5 4 2 1' // is there a perm of 65421 > 65421? No
+// 7 '3 6 5 4 2 1' // is there a perm of 365421 > 365421 ? Yes 
+// Now find the smallest element just greater than 3 in the right part of the array and swap it with 3
 // 7 4 6 5 3 2 1 
-// 
+// 7 4 '6 5 3 2 1' and reverse the selected part for the smallest
+// 7 4 1 2 3 5 6.
+
 
