@@ -1,4 +1,4 @@
-int smallestElementIndex(vector<int>& arr, int start, int target) {
+/* int smallestElementIndex(vector<int>& arr, int start, int target) {
     int index = start;
     for (int i = start; i < arr.size(); i++) {
         if (arr[i] > target && arr[i] <= arr[index]) {
@@ -6,13 +6,13 @@ int smallestElementIndex(vector<int>& arr, int start, int target) {
         }
     }
     return index;
-}
+} 
 
 void swap(int& a, int& b) {
     int temp = a;
     a = b;
     b = temp;
-}
+}  */
 
 class Solution {
 public:
@@ -33,12 +33,15 @@ public:
             return;
         }
         int nearestSmallest = 0;
+        
+        // Ideally You should be calling a function that would find the smallest element greater than that on targetIndex and return the index on ehich that element resides to further swap it, but it teurns out, in this problem, if you look for element greater than that on target index, from the right end, the first element that you find, turns out to be the one. Since array is decreasing order sorted if you disregrad the (to be swapped element) //
+        
         for(int i=len-1;i>targetIndex;i--)
         {
             if(nums[i]>nums[targetIndex]) {nearestSmallest = i; break;}
         }
         
-        smallestElementIndex(nums, targetIndex + 1, nums[targetIndex]);
+      //  smallestElementIndex(nums, targetIndex + 1, nums[targetIndex]);
 
         swap(nums[targetIndex], nums[nearestSmallest]);
 
