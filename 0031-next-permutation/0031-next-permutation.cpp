@@ -32,9 +32,13 @@ public:
             reverse(nums.begin(),nums.end());
             return;
         }
-
-        int nearestSmallest =
-            smallestElementIndex(nums, targetIndex + 1, nums[targetIndex]);
+        int nearestSmallest = 0;
+        for(int i=len-1;i>targetIndex;i--)
+        {
+            if(nums[i]>nums[targetIndex]) {nearestSmallest = i; break;}
+        }
+        
+        smallestElementIndex(nums, targetIndex + 1, nums[targetIndex]);
 
         swap(nums[targetIndex], nums[nearestSmallest]);
 
