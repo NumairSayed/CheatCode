@@ -16,7 +16,7 @@ public:
     }
         for(auto &it : charMap)
         {
-            if(it.second == 1) {len+=1; break;}
+            if(it.second == 1) {return len+1;}
         }
         return len;
         
