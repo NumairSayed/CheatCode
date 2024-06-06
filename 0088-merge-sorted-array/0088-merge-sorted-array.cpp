@@ -27,7 +27,7 @@ public:
         }
         if(j>=0 && i>=0)
         {
-            while(i>=0 && j>=0)
+            while(j>=0)
         {
             if(nums1[i]>nums2[j])
             {
