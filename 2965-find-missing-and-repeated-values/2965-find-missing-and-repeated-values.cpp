@@ -11,7 +11,7 @@ public:
             sum+=bit;
         }
     }
-        long long actualSum =n*(n+1)/2; 
+    long actualSum =n*(n+1)/2; 
     int diff = sum - actualSum;
     
     long long sumOfSquares=0;
@@ -23,7 +23,7 @@ public:
         }
     }
     
-    long long squarediff = sumOfSquares - actualSum*(2*n+1)/3;
+    long squarediff = sumOfSquares - actualSum*(2*n+1)/3;
     int aplusb = squarediff/diff;
     int a = (diff+aplusb)/2;
     int b = aplusb - a;
