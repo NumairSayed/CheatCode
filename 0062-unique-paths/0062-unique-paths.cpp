@@ -11,6 +11,6 @@ class Solution {
 public:
     int uniquePaths(int m, int n) {
         
-      return binom(n+m-2,m-1);
+      return binom(n+m-2,min(m,n)-1);
     }
 };
