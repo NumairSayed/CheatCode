@@ -1,12 +1,17 @@
-constexpr inline size_t binom(size_t n, size_t k) noexcept
-{
-    return
-      (        k> n  )? 0 :          // out of range
-      (k==0 || k==n  )? 1 :          // edge
-      (k==1 || k==n-1)? n :          // first
-      binom(n - 1, k - 1) * n / k;   // recursive
-}
+constexpr inline size_t binom(size_t n, size_t k) noexcept {
+    if (k > n) return 0;
+    if (k == 0 || k == n) return 1;
 
+    
+    k = min(k, n - k);
+
+    size_t result = 1;
+    for (size_t i = 1; i <= k; ++i) {
+        result = result * (n - i + 1) / i;
+    }
+
+    return result;
+}
 class Solution {
 public:
     int uniquePaths(int m, int n) {
